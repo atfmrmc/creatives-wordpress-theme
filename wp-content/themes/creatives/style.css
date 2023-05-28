@@ -1,0 +1,475 @@
+/* 
+Theme Name: Creatives
+Author: Artur Moreira Machado
+Author URI: atfmrmc.com
+*/
+
+/* Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*  GLOBAL  */
+
+:root {
+  --grup6: 17.94rem;
+  --grup5: 11.09rem;
+  --grup4: 6.85rem;
+  --grup3: 4.24rem;
+  --grup2: 2.62rem;
+  --grup1: 1.62rem;
+  --grup: 1rem;
+  --grup-1: 0.62rem;
+  --grup-2: 0.38rem;
+  --grup-3: 0.24rem;
+  --grup-4: 0.15rem;
+  --grup-5: 0.09rem;
+  --grup-6: 0.06rem;
+  --blue: #11749e;
+  --white: #f3f3f3;
+  --transparentWhite: #f3f3f350;
+  --black: #222222;
+  --smooth: 0.16s;
+  --globalSidePadding: max(17vw, 200px);
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --globalSidePadding: 10vw;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Outfit", sans-serif;
+  transition: var(--smooth);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 200;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.52;
+}
+
+/* Hero Section */
+
+#hero {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+}
+
+#hero .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hero .title h1 {
+  font-size: clamp(var(--grup2), 6.85vw, 11.09vw);
+  line-height: 100%;
+  color: var(--white);
+  font-weight: 600;
+}
+
+#hero .title p {
+  font-size: clamp(var(--grup), 1.62vw, 6.85vw);
+  letter-spacing: 0.62vw;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 200;
+}
+
+#hero .scrollDownBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--grup);
+  color: var(--white);
+}
+
+#hero .scrollDownBtn a {
+  height: 50px;
+  width: 50px;
+  border: #f3f3f3 1px solid;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: var(--smooth);
+}
+
+#hero .scrollDownBtn a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Feature Section */
+
+#features {
+  padding: var(--grup4) var(--globalSidePadding);
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--grup4);
+}
+
+#features h2 {
+  position: relative;
+  font-size: var(--grup2);
+  font-weight: 600;
+}
+
+#features h2::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  content: "w";
+  font-size: var(--grup5);
+  color: var(--transparentWhite);
+  font-weight: 200;
+}
+
+#features .cardList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--grup1);
+}
+
+#features .cardListCard {
+  min-width: 200px;
+  max-width: 500px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--grup);
+}
+
+#features .cardListCard:hover .cardListIcon {
+  transform: translateY(-10%);
+}
+
+#features .cardListCard:hover .cardListIcon {
+  color: var(--blue);
+  background-color: var(--white);
+}
+
+#features .cardListCard .cardListIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: var(--transparentWhite);
+  border-radius: 100px;
+}
+
+#features .cardList i {
+  font-size: var(--grup1);
+}
+
+/* Recent Section */
+
+#recent {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+}
+
+#recent article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#recent article main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grup-1);
+  padding: var(--grup4) var(--grup4) var(--grup4) var(--globalSidePadding);
+}
+
+#recent article:nth-child(even) {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#recent article:nth-child(even) main {
+  padding: var(--grup4) var(--globalSidePadding) var(--grup4) var(--grup4);
+  order: 1;
+}
+
+#recent article main .articlesInformations {
+  display: flex;
+  align-items: center;
+  gap: var(--grup-1);
+}
+
+#recent article main .articlesInformations hr {
+  height: var(--grup);
+  border: 1px solid rgb(129, 129, 129);
+}
+
+#recent article main .articlesInformations a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+#recent article:nth-child(even) main .articlesInformations a {
+  color: var(--black);
+}
+
+#recent article main h2 {
+  text-align: left;
+  font-weight: 600;
+}
+
+#recent article main p {
+  font-weight: 200;
+}
+
+#recent article aside {
+  position: relative;
+  overflow: hidden;
+}
+
+#recent article aside img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 840px) {
+  #recent article {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  #recent article:nth-child(even) {
+    grid-template-rows: 1fr 2fr;
+  }
+
+  #recent article main,
+  #recent article:nth-child(even) main {
+    padding: var(--grup3) var(--globalSidePadding);
+  }
+
+  #recent article aside {
+    grid-area: 1;
+  }
+}
+
+/* Extra Content Section */
+
+#extraContent {
+  padding: var(--grup4) var(--globalSidePadding);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--blue);
+  gap: var(--grup4);
+}
+
+#extraContent .extraContentCard {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: var(--grup);
+  transition: var(--smooth);
+}
+
+#extraContent .extraContentCard:hover {
+  transform: translateY(-5%);
+}
+
+#extraContent .extraContentCard div {
+  min-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#extraContent .extraContentCard div i {
+  font-size: var(--grup3);
+}
+
+@media screen and (max-width: 840px) {
+  #extraContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact Form Section */
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--grup5) var(--globalSidePadding);
+  gap: var(--grup4);
+  background: url("assets/images/contact-form.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+#contactForm h2 {
+  position: relative;
+  font-size: var(--grup2);
+  font-weight: 600;
+}
+
+#contactForm h2::after {
+  content: "C";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: var(--grup5);
+  color: var(--transparentWhite);
+  font-weight: 200;
+}
+
+#contactForm form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--grup1);
+}
+
+#contactForm .wpcf7 {
+  width: 100%;
+}
+
+#contactForm form p {
+  width: 100%;
+}
+
+#contactForm form label {
+  display: flex;
+  padding: var(--grup-1) var(--grup);
+  gap: var(--grup-1);
+  border: 1px solid var(--white);
+}
+
+#contactForm form label:hover {
+  outline: 1px solid var(--white);
+}
+
+#contactForm form p:nth-child(5) {
+  grid-column: 1 / 4;
+}
+
+#contactForm form p:nth-child(5) label {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactForm form label input,
+#contactForm form label textarea {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+}
+
+#contactForm form label textarea {
+  padding: var(--grup-2);
+}
+
+#contactForm form label input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--transparentWhite);
+}
+
+#contactForm form label textarea:focus {
+  outline: none;
+  border-left: 1px solid var(--transparentWhite);
+}
+
+#contactForm form p:nth-child(6) {
+  position: relative;
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contactForm .wpcf7-submit {
+  background-color: var(--blue);
+  padding: var(--grup) var(--grup3);
+  width: min-content;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: var(--grup);
+  font-weight: 600;
+  align-self: center;
+  cursor: pointer;
+  transition: var(--smooth);
+}
+
+#contactForm .wpcf7-submit:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#contactForm .wpcf7-spinner {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(150%);
+}
+
+#contactForm .wpcf7-not-valid-tip {
+  right: 0;
+  top: 0;
+  position: absolute;
+  transform: translateY(-150%);
+}
+
+@media screen and (max-width: 840px) {
+  #contactForm form {
+    grid-template-columns: 1fr;
+  }
+
+  #contactForm form p:nth-child(5) {
+    grid-column: 1;
+  }
+
+  #contactForm form p:nth-child(6) {
+    grid-column: 1;
+  }
+}
